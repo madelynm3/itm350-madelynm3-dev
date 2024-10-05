@@ -6,11 +6,11 @@ def add(a, b):
 class TestMathFunctions(unittest.TestCase):
 
     def test_add(self):
-        # Test cases for the add function
-        self.assertEqual(add(1, 2), 3)      # Test with positive integers
-        self.assertEqual(add(-1, 1), 0)     # Test with a negative and positive integer
-        self.assertEqual(add(-1, -1), -2)   # Test with negative integers
-        self.assertEqual(add(0, 0), 0)      # Test with zeros
+        # Test cases
+        self.assertEqual(add(1, 2), 3)      # positive integers
+        self.assertEqual(add(-1, 1), 0)     # a negative and positive integer
+        self.assertEqual(add(-1, -1), -2)   # negative integers
+        self.assertEqual(add(0, 0), 0)      # zeros
 
 if __name__ == '__main__':
     unittest.main()
