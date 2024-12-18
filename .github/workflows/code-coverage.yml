@@ -1,0 +1,69 @@
+<<<<<<< HEAD
+name: Code Coverage
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests and Generate Coverage
+        run: npm test -- --coverage
+
+      - name: Ensure Minimum Coverage
+        run: |
+          COVERAGE=$(grep -oP 'Statements.*?(\d+)%' coverage/summary.txt | grep -oP '\d+')
+          if [ "$COVERAGE" -lt 50 ]; then
+            echo "Coverage is below 50% ($COVERAGE%)"
+            exit 1
+          fi
+=======
+name: Code Coverage
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests and Generate Coverage
+        run: npm test -- --coverage
+
+      - name: Ensure Minimum Coverage
+        run: |
+          COVERAGE=$(grep -oP 'Statements.*?(\d+)%' coverage/summary.txt | grep -oP '\d+')
+          if [ "$COVERAGE" -lt 50 ]; then
+            echo "Coverage is below 50% ($COVERAGE%)"
+            exit 1
+          fi
+>>>>>>> a136ad38cacd7ec77977e3ad572b7ee71895594c
