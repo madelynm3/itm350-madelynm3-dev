@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+My name is Edwin. I love mountain biking
+=======
+My name is Edwin. I love mountain biking
+>>>>>>> personal-repo/main
